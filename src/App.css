@@ -4,7 +4,7 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("./assets/ciudad.jpg");
+  background-image: url("./assets/raining_nigth.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -12,7 +12,7 @@ section{
 
 .container{
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.555);
+  background-color: rgba(0, 0, 0, 0.418);
   border-radius: 10px;
   width: 60%;
   padding: 2rem;
@@ -33,11 +33,6 @@ h1{
 
 h3{
   font-size: 1.5rem;
-}
-
-i{
-  font-size: 5rem;
-  margin: 1.5rem 0;
 }
 
 p{
