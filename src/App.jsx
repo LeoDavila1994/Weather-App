@@ -28,6 +28,8 @@ function App() {
 
     }, []);
 
+    // Date:
+
     let kelvin = (weatherApi.main?.temp);
 
     let celsius = (kelvin - 273.15).toFixed(1);
