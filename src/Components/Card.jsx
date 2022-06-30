@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 
-const Card = () => {
-
-    let cel = 21.3;
-    let far = (cel * 9/5 ) + 32;
+const Card = ( { city, weather, celsius, fahrenheit } ) => {
 
     const [ num, setNum ] = useState(true)
     const [ temp, setTemp ] = useState(true);
@@ -17,11 +14,11 @@ const Card = () => {
         <div className='container'>
             <h1 className='mint-color'>Weather App</h1>
             <h3 className='white-color'>México</h3>
-            <p className='white-color'>Aguascalientes City</p>
+            <p className='white-color'>{city} City</p>
             <i className="fa-solid fa-cloud-rain mint-color"></i>
-            <p className='white-color'>Nublado</p>
-            <p className='mint-color'>{num? cel : far}{" "}°{temp? "C" : "F"}</p>
-            <button onClick={format}className='white-color'>°F / °C</button>
+            <p className='white-color'>{weather}</p>
+            <p className='mint-color'>{num? celsius : fahrenheit}{" "}°{temp? "C" : "F"}</p>
+            <button onClick={format}className='white-color'>°C / °F</button>
         </div>
     );
 };
