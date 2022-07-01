@@ -3,6 +3,11 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Card from './Components/Card'
 
+// Pendientes:
+//1- Cambiar bg segun estado de clima.
+//2- Darle funciuonalidad al reloj.
+//3- Usar un custom Hook.
+
 function App() {
 
     const [weatherApi, setWeatherApi] = useState({});
