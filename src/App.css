@@ -1,10 +1,10 @@
 section{
-  width: 100%;
+  max-width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("./assets/cloud_nigth.gif");
+  background-image: url("./assets/raining_nigth.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -43,6 +43,10 @@ p{
 .clock-container{
   display: flex;
   justify-content: center;
+  border: 1px solid white;
+  border-radius: 6px;
+  width: 200px;
+  margin: auto;
 }
 
 .format{
@@ -70,4 +74,41 @@ button{
   background-color: rgba(72, 253, 229, 0.349);
 }
 
+@media (min-width: 768px){
+  section{
+    background-image: url("./assets/wp_768.jpg");
+  }
+
+  .container{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.418);
+    border-radius: 10px;
+    width: 577px;
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .mint-color{
+    color: rgb(255, 145, 0);
+  }
+
+  button{
+    width: 40%;
+    padding: 1rem 0;
+    border-radius: 7px;
+    border: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgba(255, 145, 0, 0.438);
+  }
+
+
+}
+
+@media (min-width: 1401px){
+  section{
+    background-image: url("./assets/wp_1401.jpg");
+  }
+
+}
 

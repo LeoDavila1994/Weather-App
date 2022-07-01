@@ -7,7 +7,6 @@ import Card from './Components/Card'
 //1- Cambiar bg segun estado de clima.
 //2- Hacer pantalla de carga.
 //3- Usar un custom Hook.
-//4- Darle funciuonalidad al reloj.
 
 function App() {
 
@@ -22,14 +21,12 @@ function App() {
 
             let long = crd.longitude;
 
-
             axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=9a59acf62c14b4f7188805d27405699e`)
                 .then(res => setWeatherApi(res.data))
 
         }
 
         navigator.geolocation.getCurrentPosition(succes);
-
 
     }, []);
 

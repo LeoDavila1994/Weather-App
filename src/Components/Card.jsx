@@ -11,6 +11,7 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
     }
 
     const [ date, setDate ] = useState(new Date());
+    const [ ampm, setAmpm] = useState (true)
 
     function refreshClock(){
         setDate(new Date());
@@ -18,12 +19,15 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
 
     useEffect(()=>{
         const timerId = setInterval(refreshClock, 1000);
+
         return function cleanUp(){
             clearInterval(timerId);
+
+            if(date.getHours() >= 13){
+                setAmpm(!ampm)
+            }
         }
     },[]);
-
-
 
     const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
@@ -31,9 +35,10 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
     const hours = ["12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
     const minuts = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31",
                     "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"];
-    const seconds = ["", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31",
+    const seconds = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31",
                     "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"];
-    let year = date.getFullYear().toString().slice(length-2);
+
+    let txtYear = date.getFullYear().toString().slice(length-2);
     let txtDay = week[date.getDay()];
     let txtMonth = month[date.getMonth()];
     let txtNumDay = day[date.getDate()];
@@ -41,21 +46,11 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
     let txtMinuts = minuts[date.getMinutes()];
     let txtSeconds = seconds[date.getSeconds()];
 
-    const [ ampm, setAmpm] = useState (true)
-
-    useEffect (() => {
-
-        if(date.getHours() >= 13){
-            setAmpm(false)
-        }
-
-    }, []);
-
     return (
         <div className='container'>
             <p className='mint-color margin-txt'>Weather App</p>
             <p className='white-color'>{txtDay}</p>
-            <p className='white-color'>{txtNumDay}{" "}/{" "}{txtMonth}{" "}/{" "}{year}</p>
+            <p className='white-color'>{txtNumDay}{" "}/{" "}{txtMonth}{" "}/{" "}{txtYear}</p>
             <div className='clock-container'>
                 <div>
                     <h1 className='mint-color margin-txt'>{txtHours}:{txtMinuts}</h1>
@@ -69,7 +64,7 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
             <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt="" />
             <p className='white-color margin-txt'>{weather}</p>
             <p className='mint-color margin-txt'>{description}</p>
-            <p className='mint-color '>{num? celsius : fahrenheit}{" "}°{temp? "C" : "F"}</p>
+            <p className='mint-color '>{num? celsius : fahrenheit}{" "}{temp? "°C" : "°F"}</p>
             <button onClick={format}className='white-color'>°C / °F</button>
         </div>
     );
