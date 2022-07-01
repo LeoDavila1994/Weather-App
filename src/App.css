@@ -40,6 +40,26 @@ p{
   font-size: 1rem;
 }
 
+.clock-container{
+  display: flex;
+  justify-content: center;
+}
+
+.format{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.margin-inf{
+  margin: 0 0.5rem;
+  font-size: 0.6rem;
+}
+
+.margin-txt{
+  margin: 0.5rem 0;
+}
+
 button{
   width: 40%;
   padding: 1rem 0;
