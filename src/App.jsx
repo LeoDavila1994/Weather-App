@@ -43,10 +43,8 @@ function App() {
 
     let description = (weatherApi.weather?.[0].description);
 
-    let bgi = "./src/assets/raining_nigth.gif";
-
     return (
-        <section style={{backgroundImage:`url(${bgi})`}}>
+        <section style={{backgroundImage:`url(${"./src/assets/raining_nigth.gif"})`}}>
             <Card city={weatherApi.name} weather={weatherApi.weather?.[0].main} celsius={celsius} fahrenheit={fahrenheit} icon={icon} counrty={counrty} description={description}/>
         </section>
     )
