@@ -10,7 +10,20 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
         setNum(!num)
     }
 
-    let date = new Date();
+    const [ date, setDate ] = useState(new Date());
+
+    function refreshClock(){
+        setDate(new Date());
+    }
+
+    useEffect(()=>{
+        const timerId = setInterval(refreshClock, 1000);
+        return function cleanUp(){
+            clearInterval(timerId);
+        }
+    },[]);
+
+
 
     const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];

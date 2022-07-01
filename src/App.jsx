@@ -5,8 +5,9 @@ import Card from './Components/Card'
 
 // Pendientes:
 //1- Cambiar bg segun estado de clima.
-//2- Darle funciuonalidad al reloj.
+//2- Hacer pantalla de carga.
 //3- Usar un custom Hook.
+//4- Darle funciuonalidad al reloj.
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         }
 
         navigator.geolocation.getCurrentPosition(succes);
+
 
     }, []);
 
