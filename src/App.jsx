@@ -20,11 +20,9 @@ function App() {
             axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=9a59acf62c14b4f7188805d27405699e`)
                 .then(res => setWeatherApi(res.data))
 
-
         }
 
         navigator.geolocation.getCurrentPosition(succes);
-
 
     }, []);
 
@@ -40,10 +38,10 @@ function App() {
 
     let description = (weatherApi.weather?.[0].description);
 
-    const bgStyle = {backgroundImage:`url(${"https://i.pinimg.com/originals/ed/06/af/ed06afb859151c454e14989a948b1047.gif"})`};
+    let bgi = "./src/assets/raining_nigth.gif";
 
     return (
-        <section style={bgStyle}>
+        <section style={{backgroundImage:`url(${bgi})`}}>
             <Card city={weatherApi.name} weather={weatherApi.weather?.[0].main} celsius={celsius} fahrenheit={fahrenheit} icon={icon} counrty={counrty} description={description}/>
         </section>
     )
