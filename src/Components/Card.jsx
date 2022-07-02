@@ -11,12 +11,12 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
     }
 
     const [ date, setDate ] = useState(new Date());
-    const [ ampm, setAmpm] = useState (true)
+    const [ ampm, setAmpm] = useState ("AM")
 
     function refreshClock(){
         setDate(new Date());
         if(date.getHours() >= 13){
-            setAmpm(false)
+            setAmpm("PM")
         }
     }
 
@@ -55,7 +55,7 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
                     <h1 className='mint-color margin-txt'>{txtHours}:{txtMinuts}</h1>
                 </div>
                 <div className='format'>
-                <div><p className='margin-inf white-color'>{ampm? "AM": "PM"}</p></div><div><p className='margin-inf white-color'>{txtSeconds}</p></div>
+                <div><p className='margin-inf white-color'>{ampm}</p></div><div><p className='margin-inf white-color'>{txtSeconds}</p></div>
                 </div>
             </div>
             <h3 className='white-color margin-txt'>{counrty}</h3>
