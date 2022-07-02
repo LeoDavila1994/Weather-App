@@ -24,7 +24,7 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
             clearInterval(timerId);
 
             if(date.getHours() >= 13){
-                setAmpm(!ampm)
+                setAmpm(false)
             }
         }
     },[]);
