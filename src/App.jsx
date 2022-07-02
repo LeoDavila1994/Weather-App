@@ -6,6 +6,7 @@ import Card from './Components/Card'
 // Pendientes:
 //2- Hacer pantalla de carga.
 //3- Usar un custom Hook.
+//
 
 function App() {
 
