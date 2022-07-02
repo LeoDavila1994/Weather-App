@@ -20,11 +20,17 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
         }
     }
 
+    function refreshAmpm(){
+        if(date.getHours() >= 13){
+            setAmpm("PM")
+        }
+    }
+
     useEffect(()=>{
         const timerId = setInterval(refreshClock, 1000);
-
+        const ampmId = setInterval(refreshAmpm, 10);
         return function cleanUp(){
-            clearInterval(timerId);
+            clearInterval(timerId, ampmId);
         }
     },[]);
 
