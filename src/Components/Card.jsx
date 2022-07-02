@@ -15,6 +15,9 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
 
     function refreshClock(){
         setDate(new Date());
+        if(date.getHours() >= 13){
+            setAmpm(false)
+        }
     }
 
     useEffect(()=>{
@@ -22,10 +25,6 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
 
         return function cleanUp(){
             clearInterval(timerId);
-
-            if(date.getHours() >= 13){
-                setAmpm(false)
-            }
         }
     },[]);
 
