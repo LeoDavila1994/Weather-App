@@ -4,6 +4,7 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("./assets/clear_day.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
