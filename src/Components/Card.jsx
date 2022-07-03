@@ -15,9 +15,6 @@ const Card = ( { city, weather, celsius, fahrenheit, icon, counrty, description 
 
     function refreshClock(){
         setDate(new Date());
-        if(date.getHours() >= 13){
-            setAmpm("PM")
-        }
     }
 
     function refreshAmpm(){
